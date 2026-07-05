@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+structures/
+docking_output/
+interaction_reports/
+results/

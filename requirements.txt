@@ -1,0 +1,10 @@
+# Layer integrasi API eksternal + analisis pasca-docking
+# (tambahan di luar dependency Fase 1-3 yang sudah ada di 00_setup_environment.sh)
+
+requests>=2.31,<3.0
+urllib3>=2.0,<3.0
+python-dotenv>=1.0,<2.0     # load API key dari .env
+plip>=2.3.0                 # analisis interaksi pasca-docking (Fase 4)
+pytest>=8.0,<9.0             # untuk tests/
+pytest-mock>=3.12,<4.0
+requests-mock>=1.12,<2.0     # mock HTTP di tests, tidak butuh koneksi internet

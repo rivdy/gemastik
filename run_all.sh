@@ -44,5 +44,15 @@ echo "=================================================="
 ./05_calculate_rmsd.sh
 
 echo ""
+echo "=================================================="
+echo " STEP 6: Agregasi hasil (afinitas + RMSD -> JSON)"
+echo "=================================================="
+python3 aggregate_results.py --workdir "$WORKDIR" --pdb-id "$PDB_ID"
+
+echo "=================================================="
+echo " STEP 7: Analisis interaksi pose terbaik (PLIP)"
+echo "=================================================="
+python3 06_analyze_interactions.py --workdir "$WORKDIR" --pdb-id "$PDB_ID"
 echo "=== PIPELINE SELESAI ==="
 echo "Semua file ada di: \$WORKDIR (lihat config.sh)"
+echo "Ringkasan akhir (JSON): ${WORKDIR}/final_report.json"
