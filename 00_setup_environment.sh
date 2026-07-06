@@ -21,7 +21,7 @@ fi
 $APT update -qq && $APT install -y -qq wget openbabel > /dev/null
 
 echo "[2/6] Install BioPython & numpy..."
-pip install -q biopython numpy
+pip install -q biopython numpy --break-system-packages
 
 echo "[3/6] Cek/pasang AutoDock Vina 1.2.3..."
 if command -v vina >/dev/null 2>&1 && command -v vina_split >/dev/null 2>&1; then
@@ -31,7 +31,7 @@ elif [ -f "$WORKDIR/vina" ] && [ -f "$WORKDIR/vina_split" ]; then
   chmod +x "$WORKDIR/vina" "$WORKDIR/vina_split"
 else
   wget -q https://github.com/ccsb-scripps/AutoDock-Vina/releases/download/v1.2.3/vina_1.2.3_linux_x86_64 -O vina
-  wget -q https://github.com/ccsb-scripps/AutoDock-Vina/releases/download/v1.2.3/vina_split_1.2.3_linux_x86_64 -O vina_split
+  wget -q https://github.com/ccsb-scripps/AutoDock-Vina/releases/download/v1.2.5/vina_split_1.2.5_linux_x86_64 -O vina_split
   chmod +x vina vina_split
 fi
 
